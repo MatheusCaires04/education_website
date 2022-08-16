@@ -451,4 +451,7 @@
   .footer .footer__wrap .box form {
     width: 100%;
   }
+  .footer .footer__wrap .box form input {
+    border-radius: none !important;
+  }
 }/*# sourceMappingURL=home.css.map */

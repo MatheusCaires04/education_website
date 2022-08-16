@@ -536,6 +536,10 @@
 
         form {
           width: 100%;
+
+          input {
+            border-radius: none !important;
+          }
         }
       }
     }
