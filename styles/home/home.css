@@ -274,7 +274,7 @@
   bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 .main .courses .grid .swiper .slides .box .box__absolut {
   position: absolute;
@@ -383,6 +383,9 @@
 }
 .footer .footer__copy span {
   font-size: 1.5rem;
+}
+.footer .footer__copy span strong {
+  color: #0eb582;
 }
 
 @media (max-width: 768px) {
