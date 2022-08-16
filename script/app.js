@@ -8,12 +8,6 @@ btnMenu.addEventListener("click", () => {
   btnMenu.classList.toggle("ri-menu-line");
 });
 
-btnMenu.addEventListener("click", () => {
-  menu.classList.toggle("active");
-  btnMenu.classList.toggle("ri-close-line");
-  btnMenu.classList.toggle("ri-menu-line");
-});
-
 // FORM
 const btnActiveForm = document.querySelector(".icon__user");
 const boxForm = document.querySelector(".box__form");
