@@ -1,0 +1,543 @@
+@import "../variables";
+
+// HEADER
+.header {
+  display: flex;
+  align-items: center;
+  background-color: $white;
+  box-shadow: $box-shadow;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+
+  .header__relative {
+    display: flex;
+    width: 100%;
+    position: relative;
+
+    .menu {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      ul {
+        display: inline-flex;
+        gap: 4rem;
+        margin-right: 2rem;
+
+        li {
+          a {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: $black;
+            transition: 0.2s;
+
+            &:hover {
+              color: $green;
+            }
+          }
+        }
+      }
+
+      i {
+        font-size: 2rem;
+        margin-left: 1.5rem;
+        transition: 0.2s;
+        cursor: pointer;
+
+        &:hover {
+          color: $green;
+        }
+      }
+
+      .menu__hamburguer {
+        display: none;
+        font-weight: 700;
+      }
+
+      .icon__user {
+        color: $black;
+      }
+    }
+
+    .box__form {
+      position: absolute;
+      top: 100%;
+      right: -60rem;
+      padding: 3rem;
+      width: 60rem;
+      height: 100vh;
+      box-shadow: $box-shadow;
+      transition: 0.2s linear;
+      background-color: $white;
+
+      .box__form__flex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        .close__form {
+          font-size: 3.5rem;
+          color: $black;
+          position: absolute;
+          top: 0;
+          right: 0;
+          cursor: pointer;
+        }
+
+        .buttons__change__form {
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+
+          .btn__form__login.active,
+          .btn__form__register.active {
+            background-color: $green;
+            color: $white;
+          }
+        }
+
+        .box__login,
+        .box__register {
+          width: 80%;
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          padding: 2rem;
+          border: 0.3rem solid $green;
+
+          .input {
+            width: 100%;
+            font-size: 1.6rem;
+            margin-top: 1rem;
+          }
+
+          .saved__password {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 1rem 0 0 0;
+
+            .saved {
+              display: flex;
+              align-items: center;
+
+              #saved__password {
+                width: 1.8rem;
+                height: 1.8rem;
+
+                &:checked {
+                  background-color: $green;
+                }
+              }
+
+              label {
+                font-size: 1.4rem;
+                font-weight: 700;
+                margin-left: 0.5rem;
+                color: $black;
+              }
+            }
+
+            a {
+              font-size: 1.4rem;
+              font-weight: 700;
+              color: $black;
+              transition: 0.3s;
+
+              &:hover {
+                color: $green;
+              }
+            }
+          }
+        }
+
+        .box__login.active,
+        .box__register.active {
+          display: flex;
+        }
+      }
+    }
+
+    .box__form.active {
+      right: 0;
+    }
+  }
+}
+
+// MAIN
+.main {
+  .container__header {
+    width: 100%;
+    height: calc(100vh - 7rem);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    .img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      z-index: -1;
+    }
+
+    .img.selected {
+      opacity: 1;
+    }
+
+    .description__home {
+      width: 45%;
+      color: $white;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+
+      .title {
+        color: $white;
+        font-size: $font-title + 1.5;
+        font-weight: 900;
+      }
+
+      p {
+        font-size: 1.7rem;
+        font-weight: 600;
+      }
+
+      .btn {
+        width: 20rem;
+        font-size: 1.9rem;
+        padding: 0.5rem 1rem;
+
+        &:hover {
+          color: $light-white;
+          border: 0.3rem solid $green;
+          background-color: $green;
+        }
+      }
+    }
+  }
+
+  .subjects {
+    @include section;
+
+    .grid {
+      flex-wrap: wrap;
+      width: 100%;
+
+      .box {
+        flex: 1 1 15rem;
+        @include flexAlignCenterColumn;
+        gap: 1rem;
+        padding: 3rem;
+        border: 0.3rem solid $green;
+        background-color: $light-green;
+        transition: 0.3s;
+
+        &:hover {
+          background-color: $green;
+
+          strong,
+          span {
+            color: $white;
+          }
+        }
+
+        img {
+          width: 10rem;
+        }
+
+        strong,
+        span {
+          color: $black;
+          transition: 0.3s;
+        }
+
+        strong {
+          font-size: 1.6rem;
+          font-weight: 900;
+          white-space: nowrap;
+        }
+
+        span {
+          font-size: 1.4rem;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .courses {
+    @include section;
+    padding-bottom: 7rem;
+
+    .grid {
+      width: 100%;
+      margin-top: 2rem;
+
+      .swiper {
+        width: 100%;
+        height: 450px;
+
+        .slides {
+          .box {
+            position: relative;
+            background-color: $light-green;
+            padding: 1rem 1rem 5rem 1rem;
+            overflow: hidden;
+
+            &:hover > .box__absolut {
+              bottom: 0;
+            }
+
+            .img {
+              object-fit: cover;
+            }
+
+            .strong {
+              position: absolute;
+              bottom: 1rem;
+              left: 50%;
+              transform: translateX(-50%);
+              font-size: 2rem;
+            }
+
+            .box__absolut {
+              position: absolute;
+              bottom: -100%;
+              left: 0;
+              padding: 2rem 1rem;
+              width: 100%;
+              height: 45%;
+              @include flexCenterColumn;
+              gap: 1rem;
+              text-align: center;
+              background-color: $green;
+              transition: 0.3s linear;
+
+              strong {
+                font-size: 1.7rem;
+              }
+
+              span {
+                font-size: 1.4rem;
+              }
+
+              button {
+                font-size: 1.5rem;
+                padding: 0.5rem 2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  background-color: $light-green;
+  padding: 5rem 10%;
+
+  .footer__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-bottom: 5rem;
+
+    .box {
+      flex: 1 1 20rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      h1,
+      a,
+      span {
+        color: $black;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      span {
+        font-size: 1.3rem;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1.3rem;
+
+        li {
+          a {
+            font-size: 1.5rem;
+
+            &:hover {
+              color: $green;
+            }
+          }
+        }
+      }
+
+      .icons__social {
+        display: flex;
+        gap: 0.5rem;
+        a {
+          width: 4rem;
+          height: 4rem;
+          background-color: $green;
+          border: 0.2rem solid $green;
+          font-size: 2rem;
+          color: $white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: 0.2s;
+
+          &:hover {
+            background-color: $light-green;
+            color: $green;
+          }
+        }
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        input {
+          font-size: 1.6rem;
+          padding: 0.5rem 1rem;
+          border: 0.1rem solid $green;
+        }
+
+        .btn {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  .footer__copy {
+    padding-top: 5rem;
+    border-top: 0.3rem solid $green;
+    display: flex;
+    justify-content: center;
+
+    span {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    .header__relative {
+      .menu {
+        ul {
+          position: absolute;
+          top: -52vh;
+          left: 0;
+          width: 100%;
+          height: 50vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background-color: $white;
+          box-shadow: $box-shadow;
+          transition: 0.3s linear;
+          z-index: -1;
+        }
+
+        ul.active {
+          top: 100%;
+        }
+
+        .menu__hamburguer:hover,
+        .icon__user:hover {
+          color: $black;
+        }
+
+        .menu__hamburguer {
+          display: flex;
+        }
+      }
+
+      .box__form {
+        width: 100%;
+        right: -100%;
+      }
+    }
+  }
+
+  .main {
+    .container__header {
+      .img {
+        object-fit: cover;
+      }
+
+      .description__home {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+
+        .title {
+          font-size: 4rem;
+        }
+
+        p {
+          font-size: 1.5rem;
+        }
+
+        .btn {
+          font-size: 1.7rem;
+          padding: 0.5rem 1rem;
+        }
+      }
+    }
+  }
+
+  .footer {
+    .footer__wrap {
+      .box:nth-child(4) {
+        align-items: center;
+
+        form {
+          .btn {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .footer {
+    .footer__wrap {
+      gap: 4rem;
+
+      .box {
+        align-items: center;
+
+        form {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,116 @@
+@import "./variables";
+
+* {
+  font-family: $font;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+}
+
+*::selection {
+  background-color: $green;
+  color: $white;
+}
+
+html {
+  font-size: $font-l;
+  overflow-x: hidden;
+  scroll-padding-top: 7rem;
+}
+
+.padding {
+  padding: 3rem 0 0 0;
+}
+
+.grid {
+  display: flex;
+  gap: 2rem;
+}
+
+.center {
+  padding: 2rem 10%;
+}
+
+.title {
+  font-size: $font-title;
+  color: $black;
+}
+
+.btn__form {
+  width: 15rem;
+  font-size: $font-btn;
+  color: $green;
+  background-color: $light-green;
+  transition: 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    color: $white;
+    background-color: $green;
+  }
+}
+
+.input,
+.btn__form {
+  padding: 0.5rem 1rem;
+  border: 0.3rem solid $green;
+}
+
+.btn__form {
+  margin-top: 3rem;
+}
+
+.title__form {
+  font-size: $font-title - 0.7;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+}
+
+.main {
+  width: 100%;
+  padding-top: 7rem;
+}
+
+.btn {
+  font-weight: 700;
+  color: $green;
+  border: 0.3rem solid $light-white;
+  background-color: $light-white;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: $black;
+  transition: 0.2s;
+
+  &:hover {
+    color: $green;
+  }
+
+  i {
+    font-size: 3rem;
+    color: $green;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: $font-m;
+  }
+
+  .center {
+    padding: 2rem 5%;
+  }
+}

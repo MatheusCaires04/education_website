@@ -1,0 +1,454 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda+One&family=Nunito:wght@300;400;500;600;700;800;900&display=swap");
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+.header .header__relative {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+.header .header__relative .menu {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.header .header__relative .menu ul {
+  display: inline-flex;
+  gap: 4rem;
+  margin-right: 2rem;
+}
+.header .header__relative .menu ul li a {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #444;
+  transition: 0.2s;
+}
+.header .header__relative .menu ul li a:hover {
+  color: #0eb582;
+}
+.header .header__relative .menu i {
+  font-size: 2rem;
+  margin-left: 1.5rem;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.header .header__relative .menu i:hover {
+  color: #0eb582;
+}
+.header .header__relative .menu .menu__hamburguer {
+  display: none;
+  font-weight: 700;
+}
+.header .header__relative .menu .icon__user {
+  color: #444;
+}
+.header .header__relative .box__form {
+  position: absolute;
+  top: 100%;
+  right: -60rem;
+  padding: 3rem;
+  width: 60rem;
+  height: 100vh;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: 0.2s linear;
+  background-color: #fff;
+}
+.header .header__relative .box__form .box__form__flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.header .header__relative .box__form .box__form__flex .close__form {
+  font-size: 3.5rem;
+  color: #444;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+.header .header__relative .box__form .box__form__flex .buttons__change__form {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.header .header__relative .box__form .box__form__flex .buttons__change__form .btn__form__login.active,
+.header .header__relative .box__form .box__form__flex .buttons__change__form .btn__form__register.active {
+  background-color: #0eb582;
+  color: #fff;
+}
+.header .header__relative .box__form .box__form__flex .box__login,
+.header .header__relative .box__form .box__form__flex .box__register {
+  width: 80%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  border: 0.3rem solid #0eb582;
+}
+.header .header__relative .box__form .box__form__flex .box__login .input,
+.header .header__relative .box__form .box__form__flex .box__register .input {
+  width: 100%;
+  font-size: 1.6rem;
+  margin-top: 1rem;
+}
+.header .header__relative .box__form .box__form__flex .box__login .saved__password,
+.header .header__relative .box__form .box__form__flex .box__register .saved__password {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0 0 0;
+}
+.header .header__relative .box__form .box__form__flex .box__login .saved__password .saved,
+.header .header__relative .box__form .box__form__flex .box__register .saved__password .saved {
+  display: flex;
+  align-items: center;
+}
+.header .header__relative .box__form .box__form__flex .box__login .saved__password .saved #saved__password,
+.header .header__relative .box__form .box__form__flex .box__register .saved__password .saved #saved__password {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.header .header__relative .box__form .box__form__flex .box__login .saved__password .saved #saved__password:checked,
+.header .header__relative .box__form .box__form__flex .box__register .saved__password .saved #saved__password:checked {
+  background-color: #0eb582;
+}
+.header .header__relative .box__form .box__form__flex .box__login .saved__password .saved label,
+.header .header__relative .box__form .box__form__flex .box__register .saved__password .saved label {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-left: 0.5rem;
+  color: #444;
+}
+.header .header__relative .box__form .box__form__flex .box__login .saved__password a,
+.header .header__relative .box__form .box__form__flex .box__register .saved__password a {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #444;
+  transition: 0.3s;
+}
+.header .header__relative .box__form .box__form__flex .box__login .saved__password a:hover,
+.header .header__relative .box__form .box__form__flex .box__register .saved__password a:hover {
+  color: #0eb582;
+}
+.header .header__relative .box__form .box__form__flex .box__login.active,
+.header .header__relative .box__form .box__form__flex .box__register.active {
+  display: flex;
+}
+.header .header__relative .box__form.active {
+  right: 0;
+}
+
+.main .container__header {
+  width: 100%;
+  height: calc(100vh - 7rem);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.main .container__header .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: -1;
+}
+.main .container__header .img.selected {
+  opacity: 1;
+}
+.main .container__header .description__home {
+  width: 45%;
+  color: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+.main .container__header .description__home .title {
+  color: #fff;
+  font-size: 5.5rem;
+  font-weight: 900;
+}
+.main .container__header .description__home p {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+.main .container__header .description__home .btn {
+  width: 20rem;
+  font-size: 1.9rem;
+  padding: 0.5rem 1rem;
+}
+.main .container__header .description__home .btn:hover {
+  color: #eee;
+  border: 0.3rem solid #0eb582;
+  background-color: #0eb582;
+}
+.main .subjects {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main .subjects .grid {
+  flex-wrap: wrap;
+  width: 100%;
+}
+.main .subjects .grid .box {
+  flex: 1 1 15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem;
+  border: 0.3rem solid #0eb582;
+  background-color: #f0fdfa;
+  transition: 0.3s;
+}
+.main .subjects .grid .box:hover {
+  background-color: #0eb582;
+}
+.main .subjects .grid .box:hover strong,
+.main .subjects .grid .box:hover span {
+  color: #fff;
+}
+.main .subjects .grid .box img {
+  width: 10rem;
+}
+.main .subjects .grid .box strong,
+.main .subjects .grid .box span {
+  color: #444;
+  transition: 0.3s;
+}
+.main .subjects .grid .box strong {
+  font-size: 1.6rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+.main .subjects .grid .box span {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.main .courses {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 7rem;
+}
+.main .courses .grid {
+  width: 100%;
+  margin-top: 2rem;
+}
+.main .courses .grid .swiper {
+  width: 100%;
+  height: 450px;
+}
+.main .courses .grid .swiper .slides .box {
+  position: relative;
+  background-color: #f0fdfa;
+  padding: 1rem 1rem 5rem 1rem;
+  overflow: hidden;
+}
+.main .courses .grid .swiper .slides .box:hover > .box__absolut {
+  bottom: 0;
+}
+.main .courses .grid .swiper .slides .box .img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.main .courses .grid .swiper .slides .box .strong {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+}
+.main .courses .grid .swiper .slides .box .box__absolut {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  padding: 2rem 1rem;
+  width: 100%;
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+  background-color: #0eb582;
+  transition: 0.3s linear;
+}
+.main .courses .grid .swiper .slides .box .box__absolut strong {
+  font-size: 1.7rem;
+}
+.main .courses .grid .swiper .slides .box .box__absolut span {
+  font-size: 1.4rem;
+}
+.main .courses .grid .swiper .slides .box .box__absolut button {
+  font-size: 1.5rem;
+  padding: 0.5rem 2rem;
+}
+
+.footer {
+  width: 100%;
+  background-color: #f0fdfa;
+  padding: 5rem 10%;
+}
+.footer .footer__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-bottom: 5rem;
+}
+.footer .footer__wrap .box {
+  flex: 1 1 20rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.footer .footer__wrap .box h1,
+.footer .footer__wrap .box a,
+.footer .footer__wrap .box span {
+  color: #444;
+}
+.footer .footer__wrap .box h1 {
+  font-size: 1.8rem;
+}
+.footer .footer__wrap .box span {
+  font-size: 1.3rem;
+}
+.footer .footer__wrap .box ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+.footer .footer__wrap .box ul li a {
+  font-size: 1.5rem;
+}
+.footer .footer__wrap .box ul li a:hover {
+  color: #0eb582;
+}
+.footer .footer__wrap .box .icons__social {
+  display: flex;
+  gap: 0.5rem;
+}
+.footer .footer__wrap .box .icons__social a {
+  width: 4rem;
+  height: 4rem;
+  background-color: #0eb582;
+  border: 0.2rem solid #0eb582;
+  font-size: 2rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+.footer .footer__wrap .box .icons__social a:hover {
+  background-color: #f0fdfa;
+  color: #0eb582;
+}
+.footer .footer__wrap .box form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.footer .footer__wrap .box form input {
+  font-size: 1.6rem;
+  padding: 0.5rem 1rem;
+  border: 0.1rem solid #0eb582;
+}
+.footer .footer__wrap .box form .btn {
+  width: 50%;
+}
+.footer .footer__copy {
+  padding-top: 5rem;
+  border-top: 0.3rem solid #0eb582;
+  display: flex;
+  justify-content: center;
+}
+.footer .footer__copy span {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .header .header__relative .menu ul {
+    position: absolute;
+    top: -52vh;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    transition: 0.3s linear;
+    z-index: -1;
+  }
+  .header .header__relative .menu ul.active {
+    top: 100%;
+  }
+  .header .header__relative .menu .menu__hamburguer:hover,
+.header .header__relative .menu .icon__user:hover {
+    color: #444;
+  }
+  .header .header__relative .menu .menu__hamburguer {
+    display: flex;
+  }
+  .header .header__relative .box__form {
+    width: 100%;
+    right: -100%;
+  }
+  .main .container__header .img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .main .container__header .description__home {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  .main .container__header .description__home .title {
+    font-size: 4rem;
+  }
+  .main .container__header .description__home p {
+    font-size: 1.5rem;
+  }
+  .main .container__header .description__home .btn {
+    font-size: 1.7rem;
+    padding: 0.5rem 1rem;
+  }
+  .footer .footer__wrap .box:nth-child(4) {
+    align-items: center;
+  }
+  .footer .footer__wrap .box:nth-child(4) form .btn {
+    width: 100%;
+  }
+}
+@media (max-width: 425px) {
+  .footer .footer__wrap {
+    gap: 4rem;
+  }
+  .footer .footer__wrap .box {
+    align-items: center;
+  }
+  .footer .footer__wrap .box form {
+    width: 100%;
+  }
+}/*# sourceMappingURL=home.css.map */
